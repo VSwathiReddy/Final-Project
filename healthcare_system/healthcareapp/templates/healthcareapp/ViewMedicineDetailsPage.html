@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>MediCare</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+   
+  </head>
+
+  <body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    <div class="container d-flex">
+      <div class="contact-info mr-auto">
+        
+      </div>
+      <div class="social-links">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="index.html">MediCare</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
+
+      <nav class="nav-menu d-none d-lg-block">
+        
+      </nav><!-- .nav-menu -->
+
+      
+	  <a href="{% url 'SendQuery' %}" class="appointment-btn scrollto">Request Doctor</a></li>
+	  <a href="{% url 'ViewPrescription' %}" class="appointment-btn scrollto">Prescription</a></li>
+	  <a href="{% url 'SetReminder' %}" class="appointment-btn scrollto">Set Reminder</a></li>
+	  <a href="{% url 'ViewReminder' %}" class="appointment-btn scrollto">View Reminder</a></li>
+	  <a href="{% url 'ViewMedicineDetails' %}" class="appointment-btn scrollto">View SideEffects</a></li>
+      <a href="{% url 'index' %}" class="appointment-btn scrollto">Logout</a></li>
+
+    </div>
+  </header><!-- End Header -->
+
+ 
+  <main id="main">
+	  
+			
+		</center></ul>
+		<br class="clearfix" />
+	</div>
+	
+	<div id="splash">
+		
+	</div>	
+			
+			<center>
+<br/><br/><br/><br/><br/>
+			<center>
+
+   <h5>View Medicine Details Screen</b></h3>
+    <table class="table table-hover table-dark container" style="margin-top: 100px; z-index: 9999;">
+      <thead>
+        <tr>
+          <th scope="col">Medicine Name</th>
+          <th scope="col">Recommended Dosage</th>
+          <th scope="col">Medicine Formula</th>
+          <th scope="col">Medicine Details</th>
+          <th scope="col">Side Effects</th>
+          <th scope="col">Store Address</th>
+          <th scope="col">Latitude</th>
+          <th scope="col">Longitude</th>
+          <th scope="col">View Map</th>
+
+        </tr>
+      </thead>
+      <tbody>
+   
+						
+						<!-- <table align="center" border="1">
+						<tr><th>Medicine Name</th><th>Recommended Dosage</th><th>Medicine Formula</th>
+						<th>Medicine Details</th><th>Side Effects</th><th>Store Address</th>
+						<th>Latitude</th><th>Longitude</th><th>View Map</th></tr> -->
+			 
+		 {{ data|safe }}
+		
+			</table>
+				</div>	
+					
+				</div>
+				<br/><br/><br/><br/><br/><br/>
+				
+	</body>
+</html>

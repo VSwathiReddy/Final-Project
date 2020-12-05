@@ -1,0 +1,42 @@
+{% extends "healthcareapp/base.html" %}
+
+{% block content %}
+<script LANGUAGE="Javascript">
+  function validate() {
+    var x = document.forms["f1"]["t3"].value;
+
+    if (x == null || x == "") {
+      window.alert("Query must be enter");
+      document.f1.t3.focus();
+      return false;
+    }
+
+    return true;
+  }
+
+
+</script>
+<table class="table table-hover table-dark container" style="margin-top: -200px; z-index: 9999;">
+  <thead>
+    <tr>
+      <th scope="col">Patient name</th>
+      <th scope="col">Doctor name</th>
+      <th scope="col">Query</th>
+      <th scope="col">Prescription</th>
+      <th scope="col">Query date</th>
+      <th scope="col">Chat</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in rows %}
+
+    <tr>
+      {% for j in i %}
+      <td>{{ j }}</td>
+      {% endfor %}
+      <td><a href={% url 'room' room_name=i.1 %}?type=patient&name={{ i.0 }}&receiver={{ i.1 }} class="btn btn-primary">Chat</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}

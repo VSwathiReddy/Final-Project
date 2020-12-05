@@ -1,0 +1,292 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>MediCare</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medilab - v2.0.0
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+<script LANGUAGE="Javascript" >
+function validate(){
+	var x1=document.forms["f1"]["fname"].value;
+	var y1=document.forms["f1"]["lname"].value;
+	var x=document.forms["f1"]["email"].value;
+	var y=document.forms["f1"]["address"].value;
+	var c=document.forms["f1"]["contact"].value;
+	var e=document.forms["f1"]["username"].value;
+	var a=document.forms["f1"]["password"].value;
+	if(x1 == null || x1==""){
+		window.alert("First name must be enter");
+		document.f1.fname.focus();
+		return false;
+	}
+	if(y1 == null || y1==""){
+		window.alert("Last name must be enter");
+		document.f1.lname.focus();
+		return false;
+	}
+	if(x == null || x==""){
+		window.alert("Email ID must be enter");
+		document.f1.email.focus();
+		return false;
+	}
+	var filter = /^([a-zA-Z0-9_\.\-])+\@(gmail+\.)+(com)+$/;
+	if (!filter.test(x)) {
+		window.alert('enter a valid email address');
+		document.f1.email.focus();
+		return false;
+	}
+	if(y == null || y==""){
+		window.alert("Address must be enter");
+		document.f1.address.focus();
+		return false;
+	}
+	if(c == null || c==""){
+		window.alert("Contact No must be enter");
+		document.f1.contact.focus();
+		return false;
+	}
+	if(isNaN(c)){
+		window.alert("Please enter valid contact number");
+		document.f1.contact.focus();
+		return false;
+	}
+	if(e == null || e==""){
+		window.alert("Username must be enter");
+		document.f1.username.focus();
+		return false;
+	}
+	if(a == null || a==""){
+		window.alert("Password must be enter");
+		document.f1.password.focus();
+		return false;
+	}
+	
+	
+	return true;
+}
+		
+	
+	</script>
+</head>
+
+<style>
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: white;
+	width:600
+  }
+  .user_card {
+    width: 400px;
+	height: 600px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: white;
+    position: relative;
+    display: flex;
+    justify-content: top;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+  }
+
+  .form_container {
+    margin-top: 20px;
+  }
+
+  #form-title{
+    color: black;
+
+  }
+
+  .login_btn {
+    width: 100%;
+    background: blue;
+    color: white !important;
+  }
+  .login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+  }
+  .login_container {
+    padding: 0 2rem;
+  }
+  .input-group-text {
+    background: black;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+  }
+  .input_user,
+  .input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+  }
+
+  #messages{
+    background-color: grey;
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+  }
+</style>
+
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    <div class="container d-flex">
+      <div class="contact-info mr-auto">
+       
+      </div>
+      <div class="social-links">
+       
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="index.html">MediCare</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'index' %}">About</a></li>
+          <li><a href="{% url 'index' %}">Services</a></li>
+          <li><a href="{% url 'index' %}">Contact</a></li>
+
+		  
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <a href="{% url 'Login' %}" class="appointment-btn scrollto">Login</a>
+	  <a href="{% url 'Register' %}" class="appointment-btn scrollto">SignUp</a>
+
+    </div>
+  </header><!-- End Header -->
+
+ 
+  <main id="main">
+<br><br><br><br><br><br>			<center>
+<form name="f1" method="post" action={% url 'Signup' %} OnSubmit="return validate()">
+	{% csrf_token %}<br/>
+	<font size="" color="red"><center>{{ data }}</center></font>
+   <div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+      <div class="user_card">
+        <div class="d-flex justify-content-center">
+
+
+          <h3 id="form-title">SignUp</h3>
+        </div>
+        
+          
+            <div class="form-row">
+              <div class="col form-group">
+                <label>First name </label><br/>
+                  <input type="text" name="fname" class="form-control" placeholder=""><br/>
+              </div> <!-- form-group end.// -->
+              <div class="col form-group">
+                <label>Last name</label><br/>
+                  <input type="text" name="lname" class="form-control" placeholder=" "><br/>
+              </div> <!-- form-group end.// -->
+            </div> <!-- form-row end.// -->
+
+            <div class="form-group">
+              <label>Email ID</label>
+              <input type="email" name="email" class="form-control" placeholder="">
+            </div> <!-- form-group end.// -->
+            <div class="form-group">
+              <label>Address</label>
+              <input type="text" name="address" class="form-control" placeholder="">
+            </div>
+
+
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Contact Number</label>
+                <input type="text" name="contact" class="form-control">
+              </div> <!-- form-group end.// -->
+              <div class="form-group col-md-6">
+                <label>User Type</label>
+                <select id="inputState" name="type" class="form-control">
+                  <option> Choose...</option>
+                    <option value="Patient">Patient</option>
+                    <option value="Doctor">Doctor</option>
+                    <option value="Medical Services">Medical Services</option>
+                </select>
+              </div> <!-- form-group end.// -->
+            </div> <!-- form-row.// -->
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" name="username" class="form-control" placeholder="">
+            </div>
+            <div class="form-group">
+              <label>Create password</label>
+                <input class="form-control" name="password" type="password">
+            </div> <!-- form-group end.// -->
+
+             <div class="d-flex justify-content-center mt-3 login_container">
+               <input class="btn login_btn" type="submit" value="Register">
+               </div>
+               <br>
+               <div class="d-flex justify-content-center links">
+     						Already have an account? <a href="{% url 'Login' %}" class="ml-2">Login</a>
+
+     					</div>
+
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br><br><br><br><br>
+</body>
+</html>
